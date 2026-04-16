@@ -18,3 +18,19 @@ GDPS stand for Godot Package(s), meaning that I use several packages to make run
 - Pins : To have an abstract communication layer between the game and the user code
 
 
+------------
+
+**Next steps:**
+
+* Turn an LED on and off
+* Change the color of an LED
+* Control a motor (on/off and reverse direction)
+* Rotate a servo motor
+
+**Note:**
+The goal is not to build a full electricity simulator, but rather:
+
+* to provide an introduction to basic electronics and mechanics using Micro:Bit, aimed at younger students
+* to serve as documentation for using the Godot Engine, particularly for game developers
+
+
