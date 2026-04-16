@@ -16,6 +16,7 @@ GDPS stand for Godot Package(s), meaning that I use several packages to make run
 - Mecanum: To have a movable all direction car
 - Learn Sensor: To have simulated Server, Led and sensor.
 - Pins : To have an abstract communication layer between the game and the user code
+- Nerf: Allow to fire Nerf dart for fun mini game
 
 
 ------------
