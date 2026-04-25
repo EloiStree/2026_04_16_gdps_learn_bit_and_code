@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://babw4m5n6e20h"]
+
+[ext_resource type="PackedScene" uid="uid://dwnhjf3felba4" path="res://addons/2026_04_16_gdps_learn_bit_and_code/scene/template/code_edit_and_micro_bit_for_demo_level.tscn" id="1_ippx4"]
+[ext_resource type="PackedScene" uid="uid://d2w8mc2iahomx" path="res://addons/2026_04_11_gdp_learn_with_sensors/feature/led_color_on_off/code/rgb/square_led_rgb.tscn" id="2_f3gx5"]
+[ext_resource type="Script" uid="uid://6gpljvg8jdbr" path="res://addons/2026_03_20_gdp_hello_micro_bit/script/unstored/micro_bit_listen_at_resource_pins.gd" id="6_5j6vb"]
+[ext_resource type="Resource" uid="uid://bv4gmn2ce7sv6" path="res://addons/2026_03_20_gdp_hello_micro_bit/resource/micro_bit_resource_singleton.tres" id="7_dx68m"]
+
+[node name="DemoLevel002RgbLed" type="Node3D" unique_id=408750689]
+
+[node name="CodeEditAndMicroBitForDemoLevel" parent="." unique_id=1449126276 instance=ExtResource("1_ippx4")]
+
+[node name="SquareLedRGB" parent="." unique_id=2056367459 instance=ExtResource("2_f3gx5")]
+transform = Transform3D(0.8871961, -0.07380773, 0.45545077, 0.46139243, 0.14192243, -0.8757711, 0, 0.9871223, 0.15996738, 0, 1.1231451, 0)
+
+[node name="MicroBitListenAtResourcePins" type="Node" parent="." unique_id=927390796]
+script = ExtResource("6_5j6vb")
+micro_bit_state = ExtResource("7_dx68m")
+metadata/_custom_type_script = "uid://6gpljvg8jdbr"
+
+[connection signal="on_pin_0_analog_updated" from="MicroBitListenAtResourcePins" to="SquareLedRGB/Code/SensorViewLedRgbColor" method="set_red_with_analog_1024"]
+[connection signal="on_pin_1_analog_updated" from="MicroBitListenAtResourcePins" to="SquareLedRGB/Code/SensorViewLedRgbColor" method="set_green_with_analog_1024"]
+[connection signal="on_pin_2_analog_updated" from="MicroBitListenAtResourcePins" to="SquareLedRGB/Code/SensorViewLedRgbColor" method="set_blue_with_analog_1024"]
+
+[editable path="SquareLedRGB"]

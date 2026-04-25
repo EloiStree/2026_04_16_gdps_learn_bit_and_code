@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://doyme858qm7vs"]
+
+[ext_resource type="PackedScene" uid="uid://dwnhjf3felba4" path="res://addons/2026_04_16_gdps_learn_bit_and_code/scene/template/code_edit_and_micro_bit_for_demo_level.tscn" id="1_ljxy0"]
+[ext_resource type="Script" uid="uid://6gpljvg8jdbr" path="res://addons/2026_03_20_gdp_hello_micro_bit/script/unstored/micro_bit_listen_at_resource_pins.gd" id="3_emr1q"]
+[ext_resource type="Resource" uid="uid://bv4gmn2ce7sv6" path="res://addons/2026_03_20_gdp_hello_micro_bit/resource/micro_bit_resource_singleton.tres" id="4_bic7u"]
+[ext_resource type="PackedScene" uid="uid://2irscniowxra" path="res://addons/2026_04_11_gdp_learn_with_sensors/feature/led_color_on_off/3d/scene/item/strip/led_strip_square_5x5.tscn" id="4_ljxy0"]
+
+[node name="DemoLevel003RgbStripOfLeds" type="Node3D" unique_id=408750689]
+
+[node name="CodeEditAndMicroBitForDemoLevel" parent="." unique_id=1449126276 instance=ExtResource("1_ljxy0")]
+
+[node name="MicroBitListenAtResourcePins" type="Node" parent="." unique_id=927390796]
+script = ExtResource("3_emr1q")
+micro_bit_state = ExtResource("4_bic7u")
+metadata/_custom_type_script = "uid://6gpljvg8jdbr"
+
+[node name="SquareStrip5x5" parent="." unique_id=479119731 instance=ExtResource("4_ljxy0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0041378, 0)
+
+[connection signal="on_pin_0_on_off_changed" from="MicroBitListenAtResourcePins" to="SquareStrip5x5/Node/SensorViewStripOfLedsRgbColor" method="turn_on_off"]
+[connection signal="on_pin_0_on_off_changed" from="MicroBitListenAtResourcePins" to="SquareStrip5x5/Node/SensorViewStripOfLedsRgbColor" method="set_with_random_color" unbinds=1]
+
+[editable path="SquareStrip5x5"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB1"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB2"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB3"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB4"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB5"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB6"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB7"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB8"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB9"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB10"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB11"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB12"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB13"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB14"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB15"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB16"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB17"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB18"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB19"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB20"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB21"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB22"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB23"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB24"]
+[editable path="SquareStrip5x5/LEDs/SquareLedRGB25"]

@@ -3,13 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dwvkwuun8ybu8" path="res://addons/2026_03_20_gdp_hello_micro_bit/script/element_micro_bit_user_code_editor.tscn" id="1_3me30"]
 [ext_resource type="PackedScene" uid="uid://twxqaagw0qu2" path="res://addons/2026_03_20_gdp_hello_micro_bit/scene/core/micro_bit_with_code_quad_facade.tscn" id="2_5g4qv"]
 [ext_resource type="Script" uid="uid://cgw1snymfd8js" path="res://addons/2026_04_16_gdps_learn_bit_and_code/scene/level/level_001_turn_on_off_led/scene/godot_solution.gd" id="2_tgko4"]
+[ext_resource type="PackedScene" uid="uid://dds68brnlyurs" path="res://addons/2026_04_11_gdp_learn_with_sensors/feature/led_color_on_off/code/on_off/cylinder_led_on_off.tscn" id="4_5yn72"]
 [ext_resource type="Script" uid="uid://6gpljvg8jdbr" path="res://addons/2026_03_20_gdp_hello_micro_bit/script/unstored/micro_bit_listen_at_resource_pins.gd" id="4_gxkl3"]
-[ext_resource type="Script" uid="uid://covepukka7ksd" path="res://addons/2026_04_11_gdp_learn_with_sensors/feature/led_color_on_off/sensor_view_led_on_off.gd" id="4_wsc1j"]
-[ext_resource type="Material" uid="uid://ca1gqr7cii32w" path="res://addons/2026_04_11_gdp_learn_with_sensors/materials/mat_sensor_led_red.tres" id="5_ebmew"]
 [ext_resource type="Resource" uid="uid://bv4gmn2ce7sv6" path="res://addons/2026_03_20_gdp_hello_micro_bit/resource/micro_bit_resource_singleton.tres" id="5_h4vww"]
-[ext_resource type="Material" uid="uid://baiecprvb3ryi" path="res://addons/2026_04_11_gdp_learn_with_sensors/materials/mat_sensor_led_transparent.tres" id="6_gxkl3"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_gxkl3"]
 
 [node name="DemoLevel001" type="Node3D" unique_id=1923723180]
 
@@ -34,27 +30,15 @@ code_to_load_at_ready = ExtResource("2_tgko4")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1203244012]
 transform = Transform3D(1, 0, 0, 0, 0.97714585, 0.21256994, 0, -0.21256994, 0.97714585, 0, 0.81079733, 0)
 
-[node name="Node3D" type="Node3D" parent="." unique_id=235030375]
+[node name="cylilnder_led_on_off" parent="." unique_id=697450420 instance=ExtResource("4_5yn72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.295105, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1703362916]
-transform = Transform3D(0.11, 0, 0, 0, 0.027627787, -0.10323224, 0, 0.075077996, 0.03798821, 0, 0, 0)
-mesh = SubResource("CylinderMesh_gxkl3")
-
-[node name="Node" type="Node" parent="Node3D" unique_id=684680744]
-
-[node name="MicroBitListenAtResourcePins" type="Node" parent="Node3D/Node" unique_id=260497770]
+[node name="MicroBitListenAtResourcePins" type="Node" parent="." unique_id=1067176449]
 script = ExtResource("4_gxkl3")
 micro_bit_state = ExtResource("5_h4vww")
 metadata/_custom_type_script = "uid://6gpljvg8jdbr"
 
-[node name="SensorViewLedOnOffMaterial" type="Node" parent="Node3D/Node" unique_id=549468403 node_paths=PackedStringArray("mesh_instance")]
-script = ExtResource("4_wsc1j")
-mesh_instance = [NodePath("../../MeshInstance3D")]
-material_on = ExtResource("5_ebmew")
-material_off = ExtResource("6_gxkl3")
-metadata/_custom_type_script = "uid://covepukka7ksd"
-
-[connection signal="on_pin_0_on_off_updated" from="Node3D/Node/MicroBitListenAtResourcePins" to="Node3D/Node/SensorViewLedOnOffMaterial" method="set_led_on_off"]
+[connection signal="on_pin_0_on_off_updated" from="MicroBitListenAtResourcePins" to="cylilnder_led_on_off/Node/SensorViewLedOnOffMaterial" method="set_led_on_off"]
 
 [editable path="CanvasLayer/MicroBitUserCodeEditor"]
+[editable path="cylilnder_led_on_off"]
