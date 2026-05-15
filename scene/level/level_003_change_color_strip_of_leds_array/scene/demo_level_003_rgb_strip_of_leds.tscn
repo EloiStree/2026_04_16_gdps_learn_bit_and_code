@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dwnhjf3felba4" path="res://addons/2026_04_16_gdps_learn_bit_and_code/scene/template/code_edit_and_micro_bit_for_demo_level.tscn" id="1_ljxy0"]
 [ext_resource type="Script" uid="uid://6gpljvg8jdbr" path="res://addons/2026_03_20_gdp_hello_micro_bit/script/unstored/micro_bit_listen_at_resource_pins.gd" id="3_emr1q"]
 [ext_resource type="Resource" uid="uid://bv4gmn2ce7sv6" path="res://addons/2026_03_20_gdp_hello_micro_bit/resource/micro_bit_resource_singleton.tres" id="4_bic7u"]
-[ext_resource type="PackedScene" uid="uid://2irscniowxra" path="res://addons/2026_04_11_gdp_learn_with_sensors/feature/led_color_on_off/3d/scene/item/strip/led_strip_square_5x5.tscn" id="4_ljxy0"]
+[ext_resource type="PackedScene" uid="uid://2irscniowxra" path="res://addons/2026_04_11_gdp_learn_with_sensors/feature/led_color/3d/scene/item/strip/led_strip_square_5x5.tscn" id="4_ljxy0"]
 
 [node name="DemoLevel003RgbStripOfLeds" type="Node3D" unique_id=408750689]
 
